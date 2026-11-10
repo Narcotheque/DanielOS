@@ -1,0 +1,893 @@
+body {
+  background: #b8dfff;
+  color: #24518a;
+  font-family: "dinkie9px", monospace;
+  text-align: center;
+  padding: 50px;
+
+  /* Custom star cursor */
+  cursor:
+    url("StarCursor.png") 16 16,
+    auto;
+
+  /* Background layering */
+  position: relative;
+  isolation: isolate;
+}
+
+@font-face {
+  font-family: "dinkie9px";
+  src: url("https://chairfiles.vercel.app/DinkieBitmap-9px.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "pixelmplus10";
+  src: url("https://chairfiles.vercel.app/PixelMplus10-Regular.woff2")
+    format("woff2");
+}
+
+h1 {
+  color: #4d23cd;
+  background: #efcfef;
+  padding: 20px;
+
+  border: 2px solid #4d23cd;
+  border-radius: 0;
+  box-shadow: 4px 4px 0 #90f3e1;
+}
+
+h2 {
+  color: #3138a0;
+  background: #ffffff;
+  padding: 15px;
+
+  border: 2px solid #4d23cd;
+  border-radius: 0;
+  box-shadow: 4px 4px 0 #90f3e1;
+
+  font-size: 18px;
+  line-height: 1.6;
+  font-family: "dinkie9px", monospace;
+}
+
+p {
+  font-family: "pixelmplus10", monospace;
+}
+
+/*Sparkle animation styles*/
+.sparkle {
+  position: fixed;
+  pointer-events: none;
+  font-size: 18px;
+  color: #f75c9f;
+  z-index: 9999;
+  animation: sparkle-fall 3s steps(50, end) forwards;
+}
+
+@keyframes sparkle-fall {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--spread)), 60px) scale(0.5)
+      rotate(var(--rotation));
+  }
+}
+/*Sparkle animation styles */
+
+/*computer window thingy*/
+
+.retro-window {
+  max-width: 500px;
+  margin: 30px auto;
+  background: #fdf8fd;
+
+  border: 2px solid #4d23cd;
+
+  box-shadow:
+    inset 0 0 0 4px #90f3e1,
+    inset 0 0 0 6px #4d23cd,
+    4px 4px 0 #4e23cd48;
+
+  padding: 8px;
+}
+
+/* About Me Character Profile */
+
+.character-profile {
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  text-align: left;
+}
+
+/* Character Portrait */
+
+.profile-avatar {
+  width: 140px;
+  height: 170px;
+  object-fit: cover;
+  flex-shrink: 0;
+
+  border: 2px solid #4d23cd;
+}
+
+/* Character Information */
+
+.profile-details {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+  color: #4d23cd;
+  font-family: "pixelmplus10", monospace;
+}
+
+.profile-details h2 {
+  display: inline-block;
+
+  background: #efcfef;
+  border: 2px solid #4d23cd;
+  border-radius: 0;
+  box-shadow: none;
+
+  padding: 8px 15px;
+  margin: 0 0 12px;
+
+  font-size: 22px;
+  text-align: left;
+}
+
+.profile-details p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+/* Character Biography */
+
+.profile-bio {
+  margin-top: 20px;
+  padding: 0;
+
+  background: white;
+  border: 2px solid #4d23cd;
+  box-shadow: none;
+
+  text-align: left;
+  font-size: 16px;
+}
+
+/* Biography title bar */
+
+.bio-title {
+  background: #efcfef;
+  color: #4d23cd;
+
+  padding: 8px 12px;
+  border-bottom: 2px solid #4d23cd;
+
+  font-family: "dinkie9px", monospace;
+  font-size: 18px;
+}
+
+/* Biography text */
+
+.profile-bio p {
+  margin: 0;
+  padding: 15px;
+
+  color: #3138a0;
+  font-family: "pixelmplus10", monospace;
+  line-height: 1.5;
+}
+
+/* Window contents */
+
+.window-content {
+  padding: 20px;
+  color: #4d23cd;
+  text-align: left;
+  font-family: "pixelmplus10", monospace;
+  font-size: 18px;
+}
+
+/* Retro window title bar */
+
+.window-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #efcfef;
+  color: #8623cd;
+  padding: 8px;
+
+  font-family: "dinkie9px", monospace;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* Window button container thingy */
+.window-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+/*wher u color da buttons anf where to place */
+.window-buttons button {
+  background: #efcfef;
+  color: #4d23cd;
+  border: 2px solid #4d23cd;
+
+  width: 30px;
+  height: 30px;
+
+  font-size: 22px;
+  font-family: monospace;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Hover effect thingy when ur mouse goes over da button*/
+.window-buttons button:hover {
+  background: #90f3e1;
+}
+
+/* Pressed effect thingy*/
+.window-buttons button:active {
+  transform: translate(1px, 1px);
+}
+
+/* Sideways Art Gallery */
+
+.art-gallery {
+  display: flex;
+  gap: 15px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  padding: 15px 5px;
+  scroll-snap-type: x mandatory;
+}
+
+/* Individual artwork cards */
+
+.art-card {
+  flex: 0 0 200px;
+
+  background: #ffffff;
+  border: 2px solid #4d23cd;
+  padding: 8px;
+
+  scroll-snap-align: start;
+}
+
+/* Artwork images */
+
+.art-card img {
+  display: block;
+  width: 100%;
+  height: 230px;
+
+  object-fit: contain;
+  background: #ffffff;
+}
+
+/* Artwork titles */
+
+.art-card p {
+  margin: 10px 0 0;
+  color: #4d23cd;
+  text-align: center;
+  font-size: 16px;
+}
+
+/* Gallery instructions */
+
+.gallery-hint {
+  text-align: center;
+  color: #4d23cd;
+  font-size: 14px;
+}
+
+/* Artwork Lightbox */
+
+.art-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Show when clicked */
+
+.art-lightbox:target {
+  display: flex;
+}
+
+/* Darkened background */
+
+.lightbox-background {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 10, 40, 0.8);
+}
+
+/* Retro viewer window */
+
+.lightbox-window {
+  position: relative;
+  z-index: 1;
+
+  width: min(90vw, 700px);
+  max-height: 90vh;
+  overflow: auto;
+
+  background: #fdf8fd;
+  border: 3px solid #4d23cd;
+  padding: 6px;
+  box-shadow: 5px 5px 0 #90f3e1;
+}
+
+/* Viewer title bar */
+
+.lightbox-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #efcfef;
+  color: #4d23cd;
+  padding: 8px;
+
+  font-family: "dinkie9px", monospace;
+}
+
+/* Close button */
+
+.lightbox-close {
+  color: #4d23cd;
+  text-decoration: none;
+  border: 2px solid #4d23cd;
+  padding: 2px 10px;
+}
+
+/* Full artwork */
+
+.lightbox-window img {
+  display: block;
+  max-width: 100%;
+  max-height: 75vh;
+  width: auto;
+  height: auto;
+  margin: 15px auto;
+  object-fit: contain;
+}
+
+/* BACKGROUND THEME SWITCHER DO NOT TOUCH */
+
+/* Retro Time Window */
+
+.time-window {
+  width: 260px;
+  max-width: 100%;
+  margin: 20px auto;
+  padding: 6px;
+
+  background: #fdf8fd;
+  border: 2px solid #4d23cd;
+
+  box-shadow:
+    inset 0 0 0 3px #90f3e1,
+    4px 4px 0 #4e23cd48;
+}
+
+/* Time options container */
+
+.theme-switcher {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  padding: 8px;
+}
+
+/* Individual time buttons */
+
+.theme-switcher label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 6px 10px;
+
+  background: #f0d1f1;
+  color: #4d23cd;
+  border: 2px solid #b48ce5;
+
+  font-family: "dinkie9px", monospace;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Hover effect for time buttons */
+
+.theme-switcher label:hover {
+  background: #90f3e1;
+  color: #4d23cd;
+  transform: translateY(-3px);
+  box-shadow: 3px 3px 0 #4d23cd;
+}
+
+/* Time icons */
+
+.theme-switcher img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+/* Hide radio controls visually */
+.theme-controls input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+/* Selected theme button */
+.theme-controls:has(#day:checked) label[for="day"],
+.theme-controls:has(#sunset:checked) label[for="sunset"],
+.theme-controls:has(#night:checked) label[for="night"] {
+  background: #90f3e1;
+}
+
+/* Shared background styling */
+
+body:has(.theme-controls input:checked) {
+  background-position:
+    left center,
+    right center,
+    center center;
+
+  background-repeat: no-repeat, no-repeat, repeat;
+
+  background-size:
+    180px 100%,
+    180px 100%,
+    auto;
+
+  background-attachment: fixed;
+}
+
+/* Day background */
+
+body:has(#day:checked) {
+  background-color: #b8dfff;
+
+  background-image:
+    url("https://chairfiles.vercel.app/spaceheyleftbg.png"),
+    url("https://chairfiles.vercel.app/spaceheyrightbg.png"),
+    url("https://chairfiles.vercel.app/nsotilebg.png");
+}
+
+/* Sunset background */
+
+body:has(#sunset:checked) {
+  background-color: #f6b5cb;
+
+  background-image:
+    url("https://chairfiles.vercel.app/spaceheyleftduskbg.png"),
+    url("https://chairfiles.vercel.app/spaceheyrightduskbg.png"),
+    url("https://chairfiles.vercel.app/nsotilebg.png");
+}
+
+/* Night background */
+
+body:has(#night:checked) {
+  background-color: #292348;
+
+  background-image:
+    url("https://chairfiles.vercel.app/spaceheyleftnightbg.png"),
+    url("https://chairfiles.vercel.app/spaceheyrightnightbg.png"),
+    url("https://chairfiles.vercel.app/nsotilebg.png");
+}
+
+/* Desktop Folder Navigation */
+
+.desktop-folders {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+/* Individual folder */
+
+.folder-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+
+  width: 100px;
+  padding: 12px;
+
+  color: #4d23cd;
+  text-decoration: none;
+  font-family: "pixelmplus10", monospace;
+  font-size: 16px;
+
+  border: 2px solid transparent;
+}
+
+/* Folder image */
+
+.folder-picture {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+/* Mouse hover */
+
+.folder-icon:hover {
+  background: #efcfef;
+  border: 2px dashed #4d23cd;
+}
+
+/* Keyboard focus */
+
+.folder-icon:focus-visible {
+  outline: 3px solid #4d23cd;
+  outline-offset: 3px;
+}
+
+/* DanielOS Welcome Message */
+
+.system-message {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 6px;
+  background: #fdf8fd;
+  border: 3px solid #4d23cd;
+
+  box-shadow:
+    inset 0 0 0 3px #90f3e1,
+    5px 5px 0 #4e23cd48;
+}
+
+/* Purple title bar */
+
+.system-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #4d23cd;
+  color: white;
+  padding: 8px 12px;
+
+  font-family: "dinkie9px", monospace;
+  font-size: 18px;
+}
+
+.system-close {
+  border: 2px solid white;
+  padding: 0 7px;
+}
+
+/* Message contents */
+
+.system-body {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 25px;
+  text-align: left;
+}
+
+.system-heart {
+  font-size: 50px;
+  color: #ff69b4;
+}
+
+/* Override your existing h1 box styling */
+
+.system-body h1 {
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+
+  padding: 0;
+  margin: 0 0 10px;
+
+  color: #4d23cd;
+  font-family: "dinkie9px", monospace;
+  font-size: 30px;
+}
+
+.system-body p {
+  margin: 0;
+  color: #4d23cd;
+  font-family: "pixelmplus10", monospace;
+  font-size: 17px;
+}
+
+/* Folders inside welcome message */
+
+.system-message .desktop-folders {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+
+  margin: 0;
+  padding: 15px;
+
+  border-top: none;
+}
+
+/* Animated bow divider */
+
+.welcome-divider {
+  display: block;
+  width: 90%;
+  max-width: 100%;
+  height: auto;
+
+  margin: 10px auto;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.system-message .folder-icon {
+  width: 90px;
+  padding: 8px;
+}
+
+.system-message .folder-picture {
+  width: 45px;
+  height: 45px;
+}
+
+/* Hide radio inputs visually */
+.chat-faq input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+/* Hide answers by default */
+.chat-faq .answer {
+  display: none;
+}
+
+/* Show the selected answer */
+.chat-faq:has(#q1:checked) .answer-1 {
+  display: block;
+}
+
+.chat-faq:has(#q2:checked) .answer-2 {
+  display: block;
+}
+
+.chat-faq:has(#q3:checked) .answer-3 {
+  display: block;
+}
+
+.chat-faq:has(#q4:checked) .answer-4 {
+  display: block;
+}
+
+/* Chat message layout */
+
+.message {
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+  margin: 15px 0;
+}
+
+/* Daniel's messages: left side */
+
+.daniel-message {
+  margin-right: auto;
+  align-items: flex-start;
+}
+
+/* Visitor's messages: right side */
+
+.visitor-message {
+  margin-left: auto;
+  align-items: flex-end;
+}
+
+/* Sender names */
+
+.sender {
+  font-size: 14px;
+  color: #8623cd;
+  margin-bottom: 5px;
+}
+
+/* Chat bubbles */
+
+.message p {
+  margin: 0;
+  padding: 12px;
+  border: 2px solid #4d23cd;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Daniel's white bubbles */
+
+.daniel-message p {
+  background: #ffffff;
+}
+
+/* Visitor's pink bubbles */
+
+.visitor-message p {
+  background: #efcfef;
+}
+
+/* Make question labels clickable */
+.chat-options label {
+  display: block;
+  padding: 10px;
+  margin: 5px;
+  background: #efcfef;
+  border: 2px solid #4d23cd;
+  cursor: pointer;
+}
+
+/* Divider above premade questions */
+
+.chat-options {
+  border-top: 2px solid #efcfef;
+  margin-top: 20px;
+  padding-top: 15px;
+}
+
+/* Hover effect for premade questions */
+
+.chat-options label:hover {
+  background: #90f3e1;
+  color: #4d23cd;
+  transform: translateY(-3px);
+  box-shadow: 3px 3px 0 #4d23cd;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  transition: none;
+}
+
+/* Messenger Profile Header */
+
+.chat-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  background: #f5e9f8;
+  border-bottom: 2px solid #4d23cd;
+  padding: 12px;
+}
+
+/* Profile Picture */
+
+.chat-avatar {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+
+  border: 2px solid #4d23cd;
+  image-rendering: pixelated;
+}
+
+/* Name and Status */
+
+.chat-profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+
+  color: #4d23cd;
+  font-family: "dinkie9px", monospace;
+}
+
+/* Online Status */
+
+.online-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #39a96b;
+
+  text-shadow:
+    1px 0 #246b45,
+    -1px 0 #246b45,
+    0 1px #246b45,
+    0 -1px #246b45;
+}
+
+/* Animated online indicator */
+
+.online-gif {
+  width: 30px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Messenger typing indicator */
+
+.typing-indicator {
+  color: #8623cd;
+  font-style: italic;
+}
+
+/* Blinking typing dots */
+
+.typing-indicator:not([hidden]) {
+  animation: typing-blink 0.6s steps(2) infinite;
+}
+
+@keyframes typing-blink {
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* Keep hidden elements hidden */
+
+.typing-indicator[hidden],
+.bot-reply[hidden] {
+  display: none;
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .typing-indicator {
+    animation: none;
+  }
+}
+
+/* Custom cursor across the website */
+
+html,
+body,
+body * {
+  cursor:
+    url("StarCursor.png") 16 16,
+    auto !important;
+}
