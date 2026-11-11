@@ -9,7 +9,7 @@ let replyDelay;
 
 // Store each reply's original text
 document.querySelectorAll(".bot-reply").forEach((reply) => {
-  reply.dataset.fullText = reply.textContent.trim();
+  reply.dataset.fullText = reply.textContent.replace(/\s+/g, " ").trim();
 });
 
 // Listen for question selections
@@ -56,7 +56,7 @@ questions.forEach((question) => {
         if (index >= fullText.length) {
           clearInterval(typingTimer);
         }
-      }, 45);
+      }, 20);
     }, 1000);
   });
 });

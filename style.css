@@ -97,6 +97,18 @@ body.apps-ready #FAQs.app-open {
   display: block;
 }
 
+/* Wider About Me window on desktop only */
+
+@media (min-width: 601px) {
+  #about.retro-window {
+    width: 90%;
+    max-width: 750px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 /*computer window thingy*/
 
 .retro-window {
@@ -121,6 +133,52 @@ body.apps-ready #FAQs.app-open {
   align-items: flex-start;
   gap: 25px;
   text-align: left;
+}
+
+/* Character Description formatting */
+
+#about .profile-bio p {
+  text-align: justify;
+  line-height: 1.8;
+  margin: 0 0 18px;
+  overflow-wrap: break-word;
+}
+
+#about .profile-bio p:last-child {
+  margin-bottom: 0;
+}
+
+/* Future Objectives */
+
+.future-objectives {
+  margin-top: 25px;
+  border: 2px solid #4d23cd;
+  background: #ffffff;
+}
+
+.future-objectives .bio-title {
+  background: #efcfef;
+  border-bottom: 2px solid #4d23cd;
+  padding: 12px 15px;
+}
+
+.objectives-text {
+  padding: 20px;
+}
+
+#about .profile-bio p,
+#about .objectives-text p {
+  font-size: 14px;
+  line-height: 1.8;
+  text-align: justify;
+  margin: 0 0 18px;
+  overflow-wrap: break-word;
+  hyphens: none;
+}
+
+#about .profile-bio p:last-child,
+#about .objectives-text p:last-child {
+  margin-bottom: 0;
 }
 
 /* Character Portrait */
@@ -431,6 +489,86 @@ body.apps-ready #FAQs.app-open {
   image-rendering: pixelated;
 }
 
+/* Commission Status */
+
+.commission-status {
+  background: #f4ddf4;
+  border: 2px solid #4d23cd;
+  padding: 15px;
+  margin: 20px 0;
+  font-size: 16px;
+
+  text-align: center;
+  color: #4d23cd;
+}
+
+.commission-status span {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.commission-status p {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .commission-status {
+    padding: 12px 8px;
+    font-size: 12px;
+  }
+}
+
+/* Creative Services*/
+
+.creative-services {
+  margin-top: 25px;
+  border: 2px solid #4d23cd;
+  background: #ffffff;
+}
+
+/* Matching title bar */
+
+.creative-services .bio-title {
+  background: #efcfef;
+  border-bottom: 2px solid #4d23cd;
+  padding: 12px 15px;
+}
+
+/* Services text */
+
+.services-text {
+  padding: 20px;
+}
+
+.services-text p {
+  font-size: 14px;
+  line-height: 1.8;
+  text-align: justify;
+
+  margin: 0 0 18px;
+  overflow-wrap: break-word;
+  hyphens: none;
+}
+
+.services-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Service names */
+
+.services-text strong {
+  display: block;
+  color: #4d23cd;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
 /* Contacts directory */
 
 .contact-list {
@@ -483,6 +621,24 @@ body.apps-ready #FAQs.app-open {
 
   margin: 15px auto 25px;
 
+  image-rendering: pixelated;
+}
+
+/* Contacts decorative blinker */
+
+.contact-blinker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 22px auto 5px;
+  width: 100%;
+}
+
+.contact-blinker img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
   image-rendering: pixelated;
 }
 
@@ -997,4 +1153,523 @@ body * {
   cursor:
     url("StarCursor.png") 16 16,
     auto !important;
+}
+
+/*Music Player*/
+
+.music-player {
+  width: min(500px, calc(100% - 24px));
+  margin: 30px auto 50px;
+  box-sizing: border-box;
+
+  background: #fdf8fd;
+  border: 2px solid #4d23cd;
+
+  box-shadow:
+    inset 0 0 0 4px #90f3e1,
+    5px 5px 0 #4d23cd;
+
+  padding: 7px;
+  color: #4d23cd;
+}
+
+/* Title bar */
+
+.music-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+
+  background: #efcfef;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.music-title .window-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.music-title .window-buttons button {
+  opacity: 0.65;
+  cursor: default;
+}
+
+/* Album and song details */
+
+.music-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.music-cover {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  flex-shrink: 0;
+
+  border: 2px solid #4d23cd;
+}
+
+.music-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.music-label {
+  font-size: 12px;
+  color: #8a35d5;
+}
+
+.music-info h3 {
+  margin: 10px 0 5px;
+  font-size: 20px;
+  overflow-wrap: anywhere;
+}
+
+.music-info p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Play and pause */
+
+.music-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+/* Minimalist play/pause button */
+
+#music-toggle {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+
+  color: #4d23cd;
+  font-family: inherit;
+  font-size: 30px;
+
+  width: auto;
+  height: auto;
+  padding: 5px;
+
+  cursor: pointer;
+}
+
+/* Hover effect */
+
+#music-toggle:hover {
+  background: transparent;
+  color: #90f3e1;
+  box-shadow: none;
+}
+
+/* Click effect */
+
+#music-toggle:active {
+  transform: scale(0.9);
+  box-shadow: none;
+}
+
+/* Keyboard accessibility */
+
+#music-toggle:focus-visible {
+  outline: 2px solid #4d23cd;
+  outline-offset: 4px;
+}
+
+/* Progress bar */
+
+/* Retro pixel-style music progress bar */
+
+#music-progress {
+  -webkit-appearance: none;
+  appearance: none;
+
+  display: block;
+  width: 100%;
+  height: 18px;
+  margin: 0;
+
+  background: #efcfef;
+  border: 2px solid #4d23cd;
+  border-radius: 0;
+
+  cursor: pointer;
+}
+
+/* Chrome, Safari, Edge */
+
+#music-progress::-webkit-slider-runnable-track {
+  height: 12px;
+  background: repeating-linear-gradient(
+    to right,
+    #d76dcb 0px,
+    #d76dcb 12px,
+    #fdf8fd 12px,
+    #fdf8fd 15px
+  );
+}
+
+/* Square pixel thumb */
+
+#music-progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+
+  width: 18px;
+  height: 24px;
+  margin-top: -6px;
+
+  background: #90f3e1;
+  border: 2px solid #4d23cd;
+  border-radius: 0;
+}
+
+/* Firefox */
+
+#music-progress::-moz-range-track {
+  height: 12px;
+  background: #efcfef;
+}
+
+#music-progress::-moz-range-thumb {
+  width: 18px;
+  height: 20px;
+  background: #90f3e1;
+  border: 2px solid #4d23cd;
+  border-radius: 0;
+}
+
+/* Separate music timestamps */
+
+.music-timestamps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  margin-top: 10px;
+
+  color: #4d23cd;
+  font-size: 14px;
+}
+
+.music-timestamps span {
+  display: block;
+}
+
+/* KAngel animated mascot */
+
+.music-mascot {
+  display: block;
+
+  width: 200px;
+  max-width: 100%;
+  height: auto;
+
+  object-fit: contain;
+  image-rendering: pixelated;
+  flex-shrink: 0;
+}
+
+/* Minimalist music controls */
+
+.music-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-top: 15px;
+}
+
+.music-decoration {
+  color: #a98cb9;
+  font-size: 24px;
+  user-select: none;
+}
+
+/* Mobile adjustments for music*/
+
+@media (max-width: 600px) {
+  .music-controls {
+    gap: 12px;
+  }
+
+  .music-decoration {
+    font-size: 18px;
+  }
+
+  .music-title {
+    font-size: 14px;
+  }
+
+  .music-title .window-buttons button {
+    width: 22px;
+    height: 22px;
+    font-size: 12px;
+  }
+
+  .music-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .music-cover {
+    width: 100px;
+    height: 100px;
+  }
+
+  .music-controls {
+    justify-content: center;
+  }
+
+  .music-info h3 {
+    font-size: 16px;
+  }
+
+  .music-progress-area {
+    padding: 0 15px 15px;
+  }
+}
+
+/* Mobile Layout cus yall keep telling me its buggy*/
+
+@media (max-width: 600px) {
+  /* Center nameplate on mobile */
+
+  .profile-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-details h2 {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 0 20px;
+    text-align: center;
+  }
+
+  .profile-details p {
+    align-self: stretch;
+    text-align: left;
+  }
+
+  /* Mobile welcome message */
+
+  .system-body {
+    gap: 10px;
+    padding: 15px 10px;
+  }
+
+  .system-body h1 {
+    font-size: 20px;
+    line-height: 1.3;
+    overflow-wrap: normal;
+  }
+
+  .system-body p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  /* Stack character profile vertically */
+
+  .character-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  /* Keep avatar inside the window */
+
+  .profile-avatar {
+    width: 180px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Give text the full available width */
+
+  .profile-details {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  /* Allow text to wrap naturally */
+
+  .profile-details p {
+    overflow-wrap: anywhere;
+  }
+
+  /* Mobile window sizing */
+
+  body {
+    padding: 10px;
+  }
+
+  .retro-window,
+  .system-message {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .window-title {
+    font-size: 15px;
+    gap: 8px;
+  }
+
+  .window-title > span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .window-buttons {
+    flex-shrink: 0;
+  }
+
+  .window-buttons button {
+    width: 25px;
+    height: 25px;
+    font-size: 16px;
+  }
+
+  .profile-bio {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .profile-bio p {
+    overflow-wrap: anywhere;
+  }
+
+  /* Make Contacts heading smaller on mobile */
+
+  #contacts h1 {
+    font-size: 18px;
+    line-height: 1.4;
+    overflow-wrap: break-word;
+  }
+
+  /* Smaller gallery heading */
+  #projects h1 {
+    font-size: 20px;
+    line-height: 1.3;
+    padding: 12px;
+    overflow-wrap: break-word;
+  }
+
+  /* Gallery cards on mobile */
+
+  #projects .art-gallery {
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  #projects .art-card {
+    flex: 0 0 85%;
+    box-sizing: border-box;
+  }
+
+  #projects .art-card img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  /* FAQ mobile improvements */
+
+  .chat-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .chat-options label {
+    padding: 12px;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+  }
+
+  /* Wider FAQ chat bubbles on mobile */
+
+  .chat-faq .message {
+    width: fit-content;
+    max-width: 95%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .chat-faq .message p {
+    overflow-wrap: break-word;
+    line-height: 1.5;
+  }
+
+  /* KAngel mascot on mobile */
+
+  .music-mascot {
+    width: 160px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  #music-toggle {
+    width: auto;
+    height: auto;
+    font-size: 24px;
+    padding: 5px;
+  }
+
+  .future-objectives {
+    margin-top: 18px;
+  }
+
+  .objectives-text {
+    padding: 15px;
+  }
+
+  .objectives-text p {
+    text-align: left;
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+
+  .creative-services {
+    margin-top: 18px;
+  }
+
+  .services-text {
+    padding: 15px;
+  }
+
+  .services-text p {
+    text-align: left;
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+
+  .commission-status span {
+    font-size: 13px;
+  }
+
+  .commission-status p {
+    font-size: 11px;
+  }
 }
