@@ -79,6 +79,24 @@ p {
 }
 /*Sparkle animation styles */
 
+/* DanielOS application visibility */
+
+/* Hide application windows */
+body.apps-ready #about,
+body.apps-ready #projects,
+body.apps-ready #contacts,
+body.apps-ready #FAQs {
+  display: none;
+}
+
+/* Show the selected application */
+body.apps-ready #about.app-open,
+body.apps-ready #projects.app-open,
+body.apps-ready #contacts.app-open,
+body.apps-ready #FAQs.app-open {
+  display: block;
+}
+
 /*computer window thingy*/
 
 .retro-window {
@@ -261,6 +279,26 @@ p {
   scroll-snap-type: x mandatory;
 }
 
+/* Retro gallery scrollbar */
+
+.art-gallery::-webkit-scrollbar {
+  height: 12px;
+}
+
+.art-gallery::-webkit-scrollbar-track {
+  background: #efcfef;
+  border: 2px solid #4d23cd;
+}
+
+.art-gallery::-webkit-scrollbar-thumb {
+  background: #ff69b4;
+  border: 2px solid #4d23cd;
+}
+
+.art-gallery::-webkit-scrollbar-thumb:hover {
+  background: #90f3e1;
+}
+
 /* Individual artwork cards */
 
 .art-card {
@@ -377,6 +415,75 @@ p {
   height: auto;
   margin: 15px auto;
   object-fit: contain;
+}
+
+/* Decorative GIF dividers */
+
+.window-divider {
+  display: block;
+
+  width: auto;
+  max-width: 90%;
+  height: auto;
+
+  margin: 20px auto;
+
+  image-rendering: pixelated;
+}
+
+/* Contacts directory */
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Clickable contact cards */
+
+.contact-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  background: white;
+  color: #4d23cd;
+  border: 2px solid #4d23cd;
+  padding: 15px;
+
+  text-decoration: none;
+  font-family: "pixelmplus10", monospace;
+  font-size: 16px;
+}
+
+/* Hover effect */
+
+.contact-card:hover {
+  background: #90f3e1;
+  transform: translateY(-3px);
+  box-shadow: 3px 3px 0 #4d23cd;
+}
+
+/* Keyboard focus */
+
+.contact-card:focus-visible {
+  outline: 3px solid #4d23cd;
+  outline-offset: 3px;
+}
+
+/* Contacts GIF divider */
+
+.contact-divider {
+  display: block;
+  width: auto;
+  max-width: 85%;
+  height: auto;
+
+  margin: 15px auto 25px;
+
+  image-rendering: pixelated;
 }
 
 /* BACKGROUND THEME SWITCHER DO NOT TOUCH */
