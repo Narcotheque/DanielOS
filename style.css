@@ -1,7 +1,7 @@
 body {
   background: #b8dfff;
   color: #24518a;
-  font-family: "dinkie9px", monospace;
+  font-family: "Monaco", monospace;
   text-align: center;
   padding: 50px;
 
@@ -52,10 +52,10 @@ h2 {
 }
 
 p {
-  font-family: "pixelmplus10", monospace;
+  font-family: "Monaco", monospace;
 }
 
-/*Sparkle animation styles*/
+/* Sparkle animation */
 .sparkle {
   position: fixed;
   pointer-events: none;
@@ -77,8 +77,6 @@ p {
       rotate(var(--rotation));
   }
 }
-/*Sparkle animation styles */
-
 /* DanielOS application visibility */
 
 /* Hide application windows */
@@ -109,7 +107,7 @@ body.apps-ready #FAQs.app-open {
   }
 }
 
-/*computer window thingy*/
+/* Shared application window */
 
 .retro-window {
   max-width: 500px;
@@ -152,18 +150,25 @@ body.apps-ready #FAQs.app-open {
 
 .future-objectives {
   margin-top: 25px;
-  border: 2px solid #4d23cd;
+  border: 2px solid #24518a;
   background: #ffffff;
 }
 
 .future-objectives .bio-title {
   background: #efcfef;
-  border-bottom: 2px solid #4d23cd;
+  border-bottom: 2px solid #24518a;
   padding: 12px 15px;
+  text-align: left;
 }
 
 .objectives-text {
-  padding: 20px;
+  padding: 18px 20px;
+  overflow-wrap: break-word;
+  gap: 25px;
+}
+
+.kaomoji-future {
+  white-space: nowrap;
 }
 
 #about .profile-bio p,
@@ -171,9 +176,10 @@ body.apps-ready #FAQs.app-open {
   font-size: 14px;
   line-height: 1.8;
   text-align: justify;
-  margin: 0 0 18px;
+  margin: 0 0 20px;
   overflow-wrap: break-word;
   hyphens: none;
+  color: #24518a;
 }
 
 #about .profile-bio p:last-child,
@@ -219,7 +225,7 @@ body.apps-ready #FAQs.app-open {
 
 .profile-details p {
   margin: 8px 0;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 /* Character Biography */
@@ -256,7 +262,7 @@ body.apps-ready #FAQs.app-open {
   padding: 15px;
 
   color: #3138a0;
-  font-family: "pixelmplus10", monospace;
+  font-family: "Monaco", monospace;
   line-height: 1.5;
 }
 
@@ -266,7 +272,7 @@ body.apps-ready #FAQs.app-open {
   padding: 20px;
   color: #4d23cd;
   text-align: left;
-  font-family: "pixelmplus10", monospace;
+  font-family: "dinkie9px", monospace;
   font-size: 18px;
 }
 
@@ -287,13 +293,13 @@ body.apps-ready #FAQs.app-open {
   text-align: left;
 }
 
-/* Window button container thingy */
+/* Window button group */
 .window-buttons {
   display: flex;
   gap: 5px;
 }
 
-/*wher u color da buttons anf where to place */
+/* Window buttons */
 .window-buttons button {
   background: #efcfef;
   color: #4d23cd;
@@ -314,12 +320,12 @@ body.apps-ready #FAQs.app-open {
   cursor: pointer;
 }
 
-/* Hover effect thingy when ur mouse goes over da button*/
+/* Button hover state */
 .window-buttons button:hover {
   background: #90f3e1;
 }
 
-/* Pressed effect thingy*/
+/* Button pressed state */
 .window-buttons button:active {
   transform: translate(1px, 1px);
 }
@@ -387,6 +393,7 @@ body.apps-ready #FAQs.app-open {
   color: #4d23cd;
   text-align: center;
   font-size: 16px;
+  font-family: "PixelMplus10", monospace;
 }
 
 /* Gallery instructions */
@@ -395,6 +402,7 @@ body.apps-ready #FAQs.app-open {
   text-align: center;
   color: #4d23cd;
   font-size: 14px;
+  font-family: "PixelMplus10", monospace;
 }
 
 /* Artwork Lightbox */
@@ -567,6 +575,53 @@ body.apps-ready #FAQs.app-open {
   color: #4d23cd;
   margin-bottom: 5px;
   font-weight: bold;
+}
+
+.achievements {
+  margin-top: 25px;
+  border: 2px solid #4d23cd;
+  background: #ffffff;
+}
+
+.achievements .bio-title {
+  background: #efcfef;
+  border-bottom: 2px solid #4d23cd;
+  padding: 12px 15px;
+}
+
+.achievement-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 20px;
+}
+
+.achievement-list p {
+  margin: 0;
+  padding: 14px 10px;
+  background: #efcfef;
+  border: 2px solid #4d23cd;
+  text-align: center;
+}
+
+.achievement-list p:last-child {
+  margin-bottom: 0;
+}
+
+.achievement-list strong,
+.achievement-list span {
+  display: block;
+}
+
+.achievement-list strong {
+  color: #4d23cd;
+  font-family: "dinkie9px", monospace;
+  font-size: 16px;
+}
+
+.achievement-list span {
+  margin-top: 4px;
+  font-size: 14px;
 }
 
 /* Contacts directory */
@@ -839,6 +894,37 @@ body:has(#night:checked) {
     5px 5px 0 #4e23cd48;
 }
 
+/* Homepage introduction */
+
+.homepage-intro {
+  max-width: 600px;
+  margin: 20px 35px 10px;
+  padding: 30px 20px;
+  background: #efcfef;
+  border: 2px solid #4d23cd;
+  box-shadow: 4px 4px 0 #90f3e1;
+  text-align: left;
+}
+
+.homepage-intro strong {
+  display: block;
+  margin-bottom: 14px;
+  color: #4d23cd;
+  font-family: "dinkie9px", monospace;
+  font-size: 22px;
+}
+
+.homepage-intro p {
+  margin: 0 0 12px;
+  line-height: 1.5;
+  font-size: 15px;
+  color: #4d23cd;
+}
+
+.homepage-intro p:last-child {
+  margin-bottom: 0;
+}
+
 /* Purple title bar */
 
 .system-title {
@@ -872,6 +958,7 @@ body:has(#night:checked) {
 .system-heart {
   font-size: 50px;
   color: #ff69b4;
+  font-family: "dinkie9px", monospace;
 }
 
 /* Override your existing h1 box styling */
@@ -1155,7 +1242,7 @@ body * {
     auto !important;
 }
 
-/*Music Player*/
+/* Music player */
 
 .music-player {
   width: min(500px, calc(100% - 24px));
@@ -1184,6 +1271,7 @@ body * {
   background: #efcfef;
   padding: 10px;
   font-size: 18px;
+  font-family: "Dinkie9px", monospace;
 }
 
 .music-title .window-buttons {
@@ -1201,47 +1289,33 @@ body * {
 .music-content {
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 20px;
-}
-
-.music-cover {
-  width: 110px;
-  height: 110px;
-  object-fit: cover;
-  flex-shrink: 0;
-
-  border: 2px solid #4d23cd;
+  justify-content: center;
+  gap: 55px;
+  padding: 35px 25px 20px;
 }
 
 .music-info {
-  flex: 1;
-  min-width: 0;
-}
-
-.music-label {
-  font-size: 12px;
-  color: #8a35d5;
+  text-align: center;
+  max-width: 430px;
 }
 
 .music-info h3 {
-  margin: 10px 0 5px;
+  margin: 12px 0 8px;
   font-size: 20px;
-  overflow-wrap: anywhere;
+  white-space: nowrap;
 }
 
 .music-info p {
-  margin: 0;
-  font-size: 14px;
+  margin: 0 0 10px;
+  font-size: 13px;
 }
-
-/* Play and pause */
 
 .music-controls {
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 12px;
-  margin-top: 15px;
+  gap: 22px;
+  margin-top: 24px;
 }
 
 /* Minimalist play/pause button */
@@ -1592,6 +1666,12 @@ body * {
     max-width: 100%;
     height: auto;
     margin: 0 auto;
+  }
+
+  /* achivements*/
+
+  .achievement-list {
+    grid-template-columns: 1fr;
   }
 
   /* FAQ mobile improvements */

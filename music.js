@@ -25,7 +25,7 @@ playButton.addEventListener("click", async () => {
     try {
       await audio.play();
     } catch (error) {
-      statusText.textContent = "Unable to play ♡";
+      statusText.textContent = "! Unable to play !";
       console.error("Music playback failed:", error);
     }
   } else {
@@ -39,7 +39,7 @@ audio.addEventListener("play", () => {
   playButton.textContent = "❚❚";
   playButton.setAttribute("aria-label", "Pause music");
   playButton.setAttribute("aria-pressed", "true");
-  statusText.textContent = "⏔⏔⏔ ꒰ Playing ꒱ ⏔⏔⏔";
+  statusText.textContent = "˚ʚ PLAYING ɞ˚";
 });
 
 /* Update button when music pauses */
@@ -48,7 +48,7 @@ audio.addEventListener("pause", () => {
   playButton.textContent = "▶";
   playButton.setAttribute("aria-label", "Play music");
   playButton.setAttribute("aria-pressed", "false");
-  statusText.textContent = "⏔⏔⏔ ꒰ Paused ꒱ ⏔⏔⏔";
+  statusText.textContent = "˚ʚ PAUSED ɞ˚";
 });
 
 /* Get song duration */
